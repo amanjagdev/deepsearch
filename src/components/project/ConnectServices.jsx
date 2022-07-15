@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 
@@ -7,9 +8,23 @@ import ExcelColor from "../../assets/icons/excel-color.svg";
 import SheetsColor from "../../assets/icons/sheets-color.svg";
 import CSVColor from "../../assets/icons/csv-color.svg";
 
+import MongoModal from "../project/modals/MongoModal";
+import PostgresModal from "../project/modals/PostgresModal";
+
 const ConnectServices = () => {
+	const [mongoModalOpen, setMongoModalOpen] = useState(false);
+	const [postgresModalOpen, setPostgresModalOpen] = useState(false);
+
 	return (
 		<main className="ConnectServices">
+			<MongoModal
+				isShown={mongoModalOpen}
+				setIsShown={setMongoModalOpen}
+			/>
+			<PostgresModal
+				isShown={postgresModalOpen}
+				setIsShown={setPostgresModalOpen}
+			/>
 			<div className="heading">Connect Services To Project</div>
 			<div className="description">
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -18,11 +33,15 @@ const ConnectServices = () => {
 			</div>
 			<div className="services">
 				<div className="cards">
-					<div className="card shadow">
+					<div
+						className="card shadow"
+						onClick={() => setMongoModalOpen(true)}>
 						<Image src={MongoColor} alt="mongo logo" />
 						<FiExternalLink size={18} />
 					</div>
-					<div className="card shadow">
+					<div
+						className="card shadow"
+						onClick={() => setPostgresModalOpen(true)}>
 						<Image src={PostgresColor} alt="mongo logo" />
 						<FiExternalLink size={18} />
 					</div>

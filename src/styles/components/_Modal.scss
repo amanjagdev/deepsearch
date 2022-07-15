@@ -1,0 +1,16 @@
+.Modal {
+	.description {
+		color: var(--text-light);
+	}
+	section {
+		margin-block: 2rem;
+		.sub-heading {
+			font-size: 1.2rem;
+			font-weight: 500;
+			color: var(--text-bold);
+		}
+		.form-grp {
+			margin-top: 1rem;
+		}
+	}
+}
