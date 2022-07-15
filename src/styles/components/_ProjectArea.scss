@@ -1,0 +1,76 @@
+.ProjectArea {
+	.container {
+		margin-block: 5rem;
+	}
+	.area {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		aside {
+			.navigation {
+				display: flex;
+				flex-direction: column;
+				&__item {
+					.elements {
+						margin-left: 0.8rem;
+						margin-top: -0.5rem;
+						&__item {
+							width: 0.3rem;
+							border-radius: 100rem;
+							background-color: var(--accent-light);
+							margin-bottom: 0.2rem;
+						}
+						&__item-1 {
+							height: 3rem;
+						}
+						&__item-2 {
+							height: 2rem;
+						}
+						&__item-3 {
+							height: 0.3rem;
+						}
+					}
+					.text {
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
+						cursor: pointer;
+						.circle {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							color: var(--white);
+							background-color: var(--accent-light);
+							padding: 1rem;
+							border-radius: 50%;
+						}
+						.text-content {
+							margin-left: 0.5rem;
+							font-weight: 500;
+							color: var(--accent-light);
+						}
+					}
+					&.selected {
+						.elements__item,
+						.circle {
+							background-color: var(--accent);
+						}
+						.text-content {
+							color: var(--accent);
+						}
+					}
+				}
+			}
+		}
+		main {
+			.heading {
+				font-size: 1.5rem;
+				color: var(--accent);
+				font-weight: 600;
+			}
+			.description {
+				margin-top: 0.5rem;
+				color: var(--text-light);
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.RedefineData {
+	.content {
+		.table {
+			padding: 2rem;
+			border-radius: 1rem;
+			margin-top: 2rem;
+			width: max-content;
+			.row {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				margin-bottom: 0.3rem;
+				.grid-item {
+					display: flex;
+					align-items: center;
+					select {
+						padding-left: 0;
+						border: none;
+						font-size: 1rem;
+					}
+				}
+			}
+			.header-row {
+				padding-bottom: 0.7rem;
+				border-bottom: 1px solid var(--accent-light);
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}

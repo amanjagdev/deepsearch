@@ -1,0 +1,54 @@
+.Header {
+	.container {
+		margin-top: clamp(1.5rem, 10%, 3rem);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: var(--accent);
+		figure {
+			cursor: pointer;
+			figcaption {
+				font-family: "Noto Serif", serif;
+				font-style: italic;
+				font-size: 1.5rem;
+				font-weight: 600;
+				margin-top: 0.2rem;
+				margin-left: 0.2rem;
+			}
+		}
+		.navigation {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.nav-item {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 0.4rem;
+				padding: 0.5rem;
+				cursor: pointer;
+				color: var(--text);
+				&:not(:last-child) {
+					margin-right: 1rem;
+				}
+				&:hover:not(:first-of-type),
+				&:focus:not(:first-of-type) {
+					background: var(--shadow-color);
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.Header {
+		.container {
+			margin-right: 7%;
+			margin-left: 7%;
+			flex-direction: column;
+			figure {
+				margin-bottom: 0.7rem;
+			}
+		}
+	}
+}

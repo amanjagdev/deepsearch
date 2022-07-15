@@ -1,0 +1,24 @@
+.Heading {
+	.main-heading {
+		display: flex;
+		align-items: flex-end;
+		.text {
+			font-size: 2rem;
+			font-weight: 600;
+			color: var(--text-bold);
+		}
+		.dot {
+			margin-bottom: 0.8rem;
+			margin-left: 0.3rem;
+			height: 0.5rem;
+			width: 0.5rem;
+			background-color: var(--accent);
+			border-radius: 50%;
+		}
+	}
+	.align-center {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}

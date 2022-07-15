@@ -1,0 +1,25 @@
+.DashboardArea {
+	margin-block: 5rem;
+	min-height: 60vh;
+	.header {
+		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&__actions {
+			button {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.btn-icon {
+					margin-right: 0.4rem;
+				}
+				transition: all 0.3s ease-in-out;
+				&:hover {
+					color: var(--white);
+					background-color: var(--accent);
+				}
+			}
+		}
+	}
+}

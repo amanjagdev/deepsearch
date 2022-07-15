@@ -1,0 +1,21 @@
+@use "global";
+@use "utility";
+@use "variables";
+
+@use "./components/Footer";
+@use "./components/Header";
+
+@use "./components/Heading";
+
+@use "./components/HeroArea";
+@use "./components/AboutArea";
+@use "./components/RegisterArea";
+@use "./components/LoginArea";
+@use "./components/ProfileArea";
+@use "./components/DashboardArea";
+@use "./components/ProjectArea";
+
+@use "./components/ConnectServices";
+@use "./components/RedefineData";
+@use "./components/DefineConstraints";
+@use "./components/OverviewAndAPI";

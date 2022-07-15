@@ -1,0 +1,40 @@
+//Common Colors
+:root {
+	--white: #ffffff;
+	--white-light: rgba(255, 255, 255, 0.84);
+	
+	--black: #000000;
+	--green: #50bfa5;
+	--red: #fe7b5e;
+	--gray: #b1b8c3;
+}
+
+//Light Mode
+.light {
+	--accent: #2094ff;
+	--accent-light: #5aafff;
+
+	--back: #ffffff;
+
+	--text: #424242;
+	--text-bold: #000000;
+	--text-light: #9A9A9A;
+	
+	--pure: #ffffff;
+	--shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+//Dark Mode
+:root {
+	--accent: #2094ff;
+	--accent-light: #5aafff;
+	
+	--back: #121212;
+
+	--text: #fafafa;
+	--text-bold: #ffffff;
+	--text-light: #ffffffaa;
+
+	--pure: #000000;
+	--shadow-color: rgba(85, 85, 85, 0.1);
+}

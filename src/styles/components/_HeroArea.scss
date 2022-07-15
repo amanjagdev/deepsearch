@@ -1,0 +1,43 @@
+.HeroSection {
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding: min(7rem, 20%) 0 min(7rem, 20%) 0;
+		min-height: 78vh;
+		.headline {
+			color: var(--text-bold);
+			font-weight: 600;
+			font-size: clamp(2rem, 5vw, 3rem);
+			max-width: 15ch;
+			line-height: 4rem;
+			margin-bottom: 2rem;
+		}
+		.description {
+			margin-bottom: 2rem;
+			max-width: 45ch;
+		}
+		.illustration {
+			margin-top: 3rem;
+			max-width: 30rem;
+		}
+		.btn-grp {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.HeroSection {
+		.container {
+			grid-template-columns: 1fr;
+			.headline {
+				line-height: inherit !important;
+			}
+			.right {
+				display: none;
+			}
+		}
+	}
+}
