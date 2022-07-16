@@ -11,7 +11,7 @@ import CSVColor from '../../assets/icons/csv-color.svg';
 import MongoModal from '../project/modals/MongoModal';
 import PostgresModal from '../project/modals/PostgresModal';
 
-const ConnectServices = () => {
+const ConnectServices = ({ nextTab }) => {
   const [mongoModalOpen, setMongoModalOpen] = useState(false);
   const [postgresModalOpen, setPostgresModalOpen] = useState(false);
 
@@ -54,6 +54,7 @@ const ConnectServices = () => {
             <FiExternalLink size={18} />
           </div>
         </div>
+        <button className="next accent" onClick={nextTab}>Next</button>
       </div>
     </main>
   );

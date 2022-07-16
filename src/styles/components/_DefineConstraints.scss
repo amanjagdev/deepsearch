@@ -1,3 +1,18 @@
 .DefineConstraints {
-	
+	.card-title {
+		margin-bottom: 2rem;
+	}
+	.next {
+		margin-top: 2rem;
+	}
+	.input-range__slider {
+		background: var(--accent);
+		border: 1px solid var(--accent);
+	}
+	.input-range__slider:focus {
+		box-shadow: 0 0 0 5px #0d5eaa;
+	}
+	.input-range__track--active {
+		background: var(--accent-light);
+	}
 }

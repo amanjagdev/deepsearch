@@ -12,5 +12,10 @@
 		.form-grp {
 			margin-top: 1rem;
 		}
+		.grid-2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1rem;
+		}
 	}
 }

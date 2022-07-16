@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const RedefineData = () => {
+const RedefineData = ({ nextTab }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -77,6 +77,7 @@ const RedefineData = () => {
               </div>
             ))}
         </div>
+        <button className="next accent" onClick={nextTab}>Next</button>
       </div>
     </main>
   );

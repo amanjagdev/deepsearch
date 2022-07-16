@@ -48,9 +48,9 @@ const ProjectArea = ({ projectID }) => {
 			</div>
 			<div className="container area">
 				<Tabs tab={tab} setTab={setTab} />
-				{tab === 0 && <ConnectServices />}
-				{tab === 1 && <RedefineData />}
-				{tab === 2 && <DefineConstraints />}
+				{tab === 0 && <ConnectServices nextTab={() => setTab(1)} />}
+				{tab === 1 && <RedefineData nextTab={() => setTab(2)} />}
+				{tab === 2 && <DefineConstraints nextTab={() => setTab(3)} />}
 				{tab === 3 && <OverviewAndAPI />}
 			</div>
 		</div>

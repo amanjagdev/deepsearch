@@ -1,14 +1,17 @@
 .ConnectServices {
 	.cards {
 		.card {
-            cursor: pointer;
+			cursor: pointer;
 			padding: 1.2rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            img{
-                height: 1.8rem !important;
-            }
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			img {
+				height: 1.8rem !important;
+			}
 		}
+	}
+	.next {
+		margin-top: 2rem;
 	}
 }
