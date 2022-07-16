@@ -1,0 +1,14 @@
+input Categorical {
+  artist_genres: [String!]
+}
+
+input QueryInput {
+  query: String!
+  table: String!
+  categorical: Categorical
+}
+
+type Query {
+  search(input: QueryInput): JSON
+    @rest(method: POST, endpoint: "http://localhost:8000/search/suggest")
+}
