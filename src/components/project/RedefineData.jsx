@@ -6,32 +6,56 @@ const RedefineData = ({ nextTab }) => {
 
   useEffect(() => {
     const getStatus = () => {
-      axios
-        .get(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/status`)
-        .then((res) => {
-          if (res.task_status !== 'SUCCESS') {
-            setTimeout(getStatus, 10000);
-          } else {
-            const result = Object.keys(res.task_result).map((key) => {
-              return {
-                column: key,
-                type: res.task_result[key],
-                category: [
-                  'Non Indexed',
-                  'Text Search',
-                  'Continuous',
-                  'Categorical',
-                ],
-              };
-            });
-            console.log(result, 'result');
-            setData(result);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      //   axios
+      //     .get(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/status`)
+      //     .then((res) => {
+      //       if (res.task_status !== 'SUCCESS') {
+      //         setTimeout(getStatus, 10000);
+      //       } else {
+      //         const result = Object.keys(res.task_result).map((key) => {
+      //           return {
+      //             column: key,
+      //             type: res.task_result[key],
+      //             category: [
+      //               'Search',
+      //               'Text Search',
+      //               'Continuous',
+      //               'Categorical',
+      //             ],
+      //           };
+      //         });
+      //         console.log(result, 'result');
+      //         setData(result);
+      //       }
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
     };
+    let res = {
+      task_id: '3d882e27-d8c3-4bf6-b5ab-360d3c60b979',
+      task_status: 'SUCCESS',
+      task_result: {
+        artist_id: 'string',
+        album_id: 'string',
+        album_name: 'string',
+        artist_name: 'string',
+        album_image: 'string',
+        total_tracks: 'integer',
+        album_release_date: 'integer',
+        album_popularity: 'integer',
+      },
+    };
+
+    const result = Object.keys(res.task_result).map((key) => {
+      return {
+        column: key,
+        type: res.task_result[key],
+        category: ['search', 'string', 'continuous', 'categorical'],
+      };
+    });
+    console.log(result, 'result');
+    setData(result);
 
     getStatus();
   }, []);
@@ -65,10 +89,7 @@ const RedefineData = ({ nextTab }) => {
                 <div className="grid-item">
                   <select name="category">
                     {category.map((item, index) => (
-                      <option
-                        value={item.trim().toLowerCase().replace(' ', '-')}
-                        key={index}
-                      >
+                      <option value={item} key={index}>
                         {item}
                       </option>
                     ))}
@@ -77,7 +98,9 @@ const RedefineData = ({ nextTab }) => {
               </div>
             ))}
         </div>
-        <button className="next accent" onClick={nextTab}>Next</button>
+        <button className="next accent" onClick={nextTab}>
+          Next
+        </button>
       </div>
     </main>
   );
