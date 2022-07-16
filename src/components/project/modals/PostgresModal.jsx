@@ -3,8 +3,9 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 import { JackInTheBox } from 'react-awesome-reveal';
 import { RiCloseCircleLine } from 'react-icons/ri';
+import axios from 'axios';
 
-const ModalComp = ({ isShown, setIsShown }) => {
+const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
   const [host, setHost] = useState('');
   const [port, setPort] = useState('');
   const [username, setUsername] = useState('');
@@ -26,8 +27,9 @@ const ModalComp = ({ isShown, setIsShown }) => {
         },
       })
       .then((res) => {
-        console.log(res.task_id);
+        console.log(res.data, 'res');
         //pass onto next step
+        changeState(res.data.task_id);
       })
       .catch((err) => {
         console.log(err);
@@ -54,10 +56,6 @@ const ModalComp = ({ isShown, setIsShown }) => {
               </div>
             </div>
             <div className="Modal main-content">
-              <div className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing eli
-              </div>
-
               <section>
                 <div className="sub-heading">Connect to DB</div>
                 <div className="description">
