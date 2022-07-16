@@ -4,6 +4,7 @@ import "react-input-range/lib/css/index.css";
 
 const DefineConstraints = ({ nextTab }) => {
 	const [inputOne, setInputOne] = useState(0);
+	const [inputTwo, setInputTwo] = useState(0);
 	return (
 		<main className="DefineConstraints">
 			<div className="heading">Define Constraints</div>
@@ -28,8 +29,8 @@ const DefineConstraints = ({ nextTab }) => {
 						<InputRange
 							maxValue={20}
 							minValue={0}
-							value={inputOne}
-							onChange={(value) => setInputOne(value)}
+							value={inputTwo}
+							onChange={(value) => setInputTwo(value)}
 						/>
 					</div>
 				</div>
