@@ -55,9 +55,7 @@ const ModalComp = ({ isShown, setIsShown }) => {
             </div>
             <div className="Modal main-content">
               <div className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-                maiores non esse voluptatum ipsam, corrupti sit perferendis
-                eligendi! Ipsam, inventore.
+                Lorem ipsum dolor sit amet consectetur adipisicing eli
               </div>
 
               <section>
