@@ -65,17 +65,19 @@ const DefineConstraints = ({ nextTab, tabStates, setTabState }) => {
       </div>
       <div className="content">
         <div className="cards">
-          {Object.keys(tabStates?.tabTwoState)?.map((key, i) => (
-            <div className="card shadow" key={key}>
-              <div className="card-title">{formatTitle(key)}</div>
-              <InputRange
-                maxValue={20}
-                minValue={0}
-                value={inputStates[i]}
-                onChange={(e) => handleInputStateChange(e, i)}
-              />
-            </div>
-          ))}
+          {Object.keys(tabStates?.tabTwoState)
+            ?.filter((key) => Object[key] !== 'string')
+            .map((key, i) => (
+              <div className="card shadow" key={key}>
+                <div className="card-title">{formatTitle(key)}</div>
+                <InputRange
+                  maxValue={20}
+                  minValue={0}
+                  value={inputStates[i]}
+                  onChange={(e) => handleInputStateChange(e, i)}
+                />
+              </div>
+            ))}
         </div>
       </div>
 

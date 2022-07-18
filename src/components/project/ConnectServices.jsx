@@ -30,11 +30,10 @@ const ConnectServices = ({ nextTab, setTabState }) => {
         setIsShown={setPostgresModalOpen}
         changeState={handleModalStateChange}
       />
-      <div className="heading">Connect Services To Project</div>
+      <div className="heading">Connect your Database</div>
       <div className="description">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique esse
-        facilis cupiditate necessitatibus libero modi ab repudiandae, iure cum
-        temporibus!
+        Choose from your catalogue's database architecture from the below
+        mentioned options
       </div>
       <div className="services">
         <div className="cards">

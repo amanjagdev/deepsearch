@@ -13,7 +13,10 @@ const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
   const [databse, setDatabase] = useState('');
   const [table, setTable] = useState('');
 
+  const [status, setStatus] = useState('Submit');
+
   const connectDB = () => {
+    setStatus('Connecting...');
     axios
       .post(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/parse/schema`, {
         connection_type: 'postgres',
@@ -27,11 +30,13 @@ const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
         },
       })
       .then((res) => {
+        setStatus('Completed');
         console.log(res.data, 'res');
         //pass onto next step
         changeState(res.data.task_id);
       })
       .catch((err) => {
+        setStatus('Failed..');
         console.log(err);
       });
   };
@@ -58,22 +63,11 @@ const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
             <div className="Modal main-content">
               <section>
                 <div className="sub-heading">Connect to DB</div>
-                <div className="description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Sunt, incidunt.
-                </div>
-                <div className="form-grp">
-                  <label>DB Connecton URL</label>
-                  <input type="text" />
-                </div>
+                <div className="description"></div>
               </section>
 
               <section>
-                <div className="sub-heading">DB Credentials</div>
-                <div className="description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Sunt, incidunt.
-                </div>
+                <div className="description"></div>
                 <div className="grid-2">
                   <div className="form-grp">
                     <label>Hostname </label>
@@ -110,7 +104,7 @@ const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
                   <div className="form-grp">
                     <label>Password</label>
                     <input
-                      type="text"
+                      type="password"
                       value={password}
                       onChange={(e) => {
                         setPassword(e.target.value);
@@ -121,7 +115,7 @@ const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
 
                 <div className="grid-2">
                   <div className="form-grp">
-                    <label>Databse</label>
+                    <label>Database</label>
                     <input
                       type="text"
                       value={databse}
@@ -144,7 +138,7 @@ const ModalComp = ({ isShown, setIsShown, changeState, tabStates }) => {
               </section>
 
               <button className="btn accent" onClick={connectDB}>
-                Submit
+                {status}
               </button>
             </div>
           </div>

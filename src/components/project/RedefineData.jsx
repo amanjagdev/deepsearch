@@ -14,12 +14,9 @@ const RedefineData = ({ nextTab, tabStates, setTabState }) => {
           task_id: tabStates.tabOneState,
         })
         .then((res) => {
-          console.log(res.data.task_result, 'status');
           if (res.data.task_status !== 'SUCCESS') {
-            console.log('lol');
             setTimeout(getStatus, 10000);
           } else {
-            console.log('in');
             const result = Object.keys(res.data.task_result).map((key) => {
               return {
                 column: key,
@@ -27,7 +24,6 @@ const RedefineData = ({ nextTab, tabStates, setTabState }) => {
                 category: ['string', 'search', 'integer', 'category'],
               };
             });
-            console.log(result, 'result');
             setData(result);
             let temp = Array(result.length).fill('search');
             setSelected(temp);
