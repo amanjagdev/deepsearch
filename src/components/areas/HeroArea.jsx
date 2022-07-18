@@ -17,10 +17,9 @@ export default function HeroSection() {
               Improved Search <br /> for your platform
             </div>
             <div className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              qui possimus quam, dignissimos atque cupiditate blanditiis quaerat
-              officiis velit praesentium tempore voluptatibus voluptas corporis
-              deserunt labore architecto dolorem minima et!
+              Build user personalized search API's without writing a single line
+              of code. Integrates seamlessly with existing data sources. Based
+              on GraphQL, powered by Stepzen
             </div>
 
             <div className="btn-grp">
