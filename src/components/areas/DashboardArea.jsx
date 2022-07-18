@@ -15,34 +15,11 @@ const DashboardArea = () => {
   const router = useRouter();
   const { user, isAuth, token } = useUser();
 
-  // useEffect(() => {
-  // 	if (token) {
-  // 		// Axios.get(`${process.env.NEXT_PUBLIC_API_URL}/projects/all`, {
-  // 		// 	headers: {
-  // 		// 		Authorization: "Bearer " + token,
-  // 		// 	},
-  // 		// })
-  // 		// 	.then((res) => res.data.data)
-  // 		// 	.then((res) => {
-  // 		// 		setProjects(res);
-  // 		// 	});
-  // 	}
-  // 	setProjects([
-  // 		{
-  // 			_id: 1,
-  // 			name: "Youtube Music",
-  // 			connected: ["mongoDB"],
-  // 			description: "Artist search for youtube music",
-  // 		},
-  // 	]);
-  // }, [token]);
-
-  // if (!isAuth) return null;
   return (
     <div className="DashboardArea">
       <div className="container">
         <div className="header">
-          <Heading text={`Welcome ${user?.name.split(' ')[0]}`} />
+          {/* <Heading text={`Welcome ${user?.name.split(' ')[0]}`} /> */}
           <div className="header__actions">
             <button className="btn">
               <HiPlus size={16} className="btn-icon" />

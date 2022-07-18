@@ -1,4 +1,5 @@
 import { IoCopyOutline } from 'react-icons/io5';
+
 const OverviewAndAPI = () => {
   return (
     <main className="OverviewAndAPI">
@@ -13,7 +14,7 @@ const OverviewAndAPI = () => {
           <div className="sub-heading">Your API URL</div>
           <div className="code">
             <pre className="code-text">
-              https://localhost:8000/search/suggest
+              https://greenbay.stepzen.net/api/orange-tarsier/__graphql
             </pre>
             <div className="icon">
               <IoCopyOutline size={18} />
@@ -27,13 +28,15 @@ const OverviewAndAPI = () => {
           </div>
           <div className="code">
             <pre className="code-text">
-              {`{
-    "query": "tay",
-    "table": "artists",
-    "categorical": {
-        "artist_genres": ["hip hop", "pop"]
-    }
-}`}
+              {`
+              curl https://greenbay.stepzen.net/api/orange-tarsier/__graphql \
+              --header "Authorization: Apikey $(stepzen whoami --apikey)" \
+              --header "Content-Type: application/json" \
+              --data-raw '{
+                "query": "query SampleQuery { __schema { queryType { name description } } }"
+              }'
+           
+              `}
             </pre>
             <div className="icon">
               <IoCopyOutline size={18} />
