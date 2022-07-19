@@ -36,8 +36,6 @@ const DefineConstraints = ({ nextTab, tabStates, setTabState }) => {
     setTabState(newStateToSet);
   };
 
-  console.log(tabStates, 'Tab states');
-
   const clickHandler = () => {
     axios
       .post(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/data/insert`, {
@@ -55,6 +53,8 @@ const DefineConstraints = ({ nextTab, tabStates, setTabState }) => {
     nextTab();
   };
 
+  console.log(tabStates.tabTwoState, 'tabstate two');
+
   return (
     <main className="DefineConstraints">
       <div className="heading">Define Constraints</div>
@@ -66,12 +66,12 @@ const DefineConstraints = ({ nextTab, tabStates, setTabState }) => {
       <div className="content">
         <div className="cards">
           {Object.keys(tabStates?.tabTwoState)
-            ?.filter((key) => Object[key] !== 'string')
+            ?.filter((key) => tabStates?.tabTwoState[key] !== 'string')
             .map((key, i) => (
               <div className="card shadow" key={key}>
                 <div className="card-title">{formatTitle(key)}</div>
                 <InputRange
-                  maxValue={20}
+                  maxValue={10}
                   minValue={0}
                   value={inputStates[i]}
                   onChange={(e) => handleInputStateChange(e, i)}

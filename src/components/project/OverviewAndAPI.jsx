@@ -21,9 +21,8 @@ const OverviewAndAPI = () => {
             </div>
           </div>
         </section>
-        <section>
+        {/* <section>
           <div className="sub-heading">
-            {/* /search/q={`{`}query{`}`} */}
             Example body
           </div>
           <div className="code">
@@ -42,7 +41,7 @@ const OverviewAndAPI = () => {
               <IoCopyOutline size={18} />
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </main>
   );
